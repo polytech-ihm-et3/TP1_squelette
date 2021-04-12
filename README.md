@@ -2,7 +2,6 @@ Programmation Java @ Et3
 <br>
 Polytech Paris-Saclay | 2019-20
 
- 
 ___
 
 # TP1
@@ -31,7 +30,7 @@ Ce programme devra contenir :
 >   1) Allez dans *File* > *New* > *Project from Version Control...*;
 >   2) Sur la droite, sélectionnez *GitHub*;
 >   3) Dans la barre de recherche, en haut, inscrivez "https://github.com/polytech-ihm-et3/TP1_squelette.git";
->   4) Cliquez sur "*Clone*".
+>   4) Cliquez sur *Clone*.
 >   
 > Pour visualiser les tâches à réaliser dans ce projet avec IntelliJ, allez dans "*View*" > "*Tool Windows*" > "*TODO*".
 
@@ -41,14 +40,14 @@ Ce programme devra contenir :
 
 <br><div align="center"><img src="images/tempconvV.jpg" width="150"></img></div><br>
 
-4. Implémentez `textFieldCListener` pour qu'il réalise les actions suivantes si l'utilisateur appuie sur la touche *ENTRÉE*, alors que le focus est sur textFieldC :
+4. Implémentez le `textFieldCListener` pour qu'il réalise les actions suivantes si l'utilisateur appuie sur la touche *ENTRÉE*, alors que le focus est sur textFieldC :
 
  - lire la valeur indiquée dans le champs de texte correspondant à la valeur en *Celsius*;
  - transformer cette valeur en float (attention à la gestion des exceptions !);
  - convertir cette valeur en *Fahrenheit*;
  - écrire cette nouvelle valeur dans le champs de texte correspondant à la valeur en *Fahrenheit*.
 
-Associez `textFieldCListener` au champs de texte correspondant à la valeur en *Celsius*.
+Associez le `textFieldCListener` au champs de texte correspondant à la valeur en *Celsius*.
 
 > Ici, le listener en question surveille les touches du clavier. Il s'agit donc d'un [*EventHandler*](https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html) qui surveille les [*KeyEvents*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/KeyEvent.html). On peut créer ce listener en utilisant :
 > ```Java
@@ -62,17 +61,19 @@ Associez `textFieldCListener` au champs de texte correspondant à la valeur en *
 > ```
 > Pour associer un Listener à un champs de texte, vous pouvez utiliser la méthode [*setOnKeyPressed*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html#setOnKeyPressed-javafx.event.EventHandler-).
 
-5. Implémentez `textFieldFListener` pour qu'il réalise les actions suivantes si l'utilisateur appuie sur la touche *ENTRÉE*, alors que le focus est sur textFieldF :
+5. Implémentez le `textFieldFListener` pour qu'il réalise les actions suivantes si l'utilisateur appuie sur la touche *ENTRÉE*, alors que le focus est sur textFieldF :
 
  - lire la valeur indiquée dans le champs de texte correspondant à la valeur en *Fahrenheit*;
  - transformer cette valeur en float (attention à la gestion des exceptions !);
  - convertir cette valeur en *Celsius*;
  - écrire cette nouvelle valeur dans le champs de texte correspondant à la valeur en *Celsius*.
 
-Associez `textFieldCListener` au champs de texte correspondant à la valeur en *Fahrenheit*.
+Associez le `textFieldCListener` au champs de texte correspondant à la valeur en *Fahrenheit*.
 
+6. Le `buttonCloseListener` quitte l'application . Associez-le au bouton *Close*.
 
+> Ici, le listener en question surveille l'action liée à un bouton. Il s'agit donc d'un [*EventHandler*](https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html) qui surveille les [*ActionEvents*](https://docs.oracle.com/javase/8/javafx/api/javafx/event/ActionEvent.html).
 
-6) The `buttonCloseListener` closes the window. Associate it to the "Close" button.
-7) Fill in the `buttonResetListener` in order to empty both text boxes. Associate it to the "Reset" button.
-8) (Going furhter) Associate a `TextFormatter` to `textFieldF` to ensure a valid character input (e.g., 23, 23.345, -21, 3E -02).
+7. Implémentez le `buttonResetListener` pour qu'il vide les deux champs de texte. Associez-le au bouton *Reset*.
+
+8. (Bonus) Associez un [*TextFormatter*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextFormatter.html) aux deux champs de texte pour qu'ils n'acceptent que des entrées valides (e.g. 23, 23.345, -21, 3E -02).
