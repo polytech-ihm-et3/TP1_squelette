@@ -68,7 +68,7 @@ Ce programme devra contenir :
  - convertir cette valeur en *Celsius*;
  - écrire cette nouvelle valeur dans le champs de texte correspondant à la valeur en *Celsius*.
 
-    Associez le `textFieldCListener` au champs de texte correspondant à la valeur en *Fahrenheit*.
+    Associez le `textFieldFListener` au champs de texte correspondant à la valeur en *Fahrenheit*.
 
 6. Le `buttonCloseListener` quitte l'application . Associez-le au bouton *Close*.
 
