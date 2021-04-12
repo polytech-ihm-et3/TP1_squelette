@@ -40,7 +40,7 @@ Ce programme devra contenir :
 
 <br><div align="center"><img src="images/tempconvV.jpg" width="150"></img></div><br>
 
-4. Implémentez le `textFieldCListener` pour qu'il réalise les actions suivantes si l'utilisateur appuie sur la touche *ENTRÉE*, alors que le focus est sur textFieldC :
+4. Le `textFieldCListener` réalise les actions suivantes si l'utilisateur appuie sur la touche *ENTRÉE*, alors que le focus est sur textFieldC :
 
  - lire la valeur indiquée dans le champs de texte correspondant à la valeur en *Celsius*;
  - transformer cette valeur en float (attention à la gestion des exceptions !);
