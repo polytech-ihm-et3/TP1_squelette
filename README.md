@@ -47,7 +47,7 @@ Ce programme devra contenir :
  - convertir cette valeur en *Fahrenheit*;
  - écrire cette nouvelle valeur dans le champs de texte correspondant à la valeur en *Fahrenheit*.
 
-    Associez le `textFieldCListener` au champs de texte correspondant à la valeur en *Celsius*.
+  Associez le `textFieldCListener` au champs de texte correspondant à la valeur en *Celsius*.
 
 > Ici, le listener en question surveille les touches du clavier. Il s'agit donc d'un [*EventHandler*](https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html) qui surveille les [*KeyEvents*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/KeyEvent.html). On peut créer ce listener en utilisant :
 > ```Java
@@ -68,7 +68,7 @@ Ce programme devra contenir :
  - convertir cette valeur en *Celsius*;
  - écrire cette nouvelle valeur dans le champs de texte correspondant à la valeur en *Celsius*.
 
-Associez le `textFieldCListener` au champs de texte correspondant à la valeur en *Fahrenheit*.
+  Associez le `textFieldCListener` au champs de texte correspondant à la valeur en *Fahrenheit*.
 
 6. Le `buttonCloseListener` quitte l'application . Associez-le au bouton *Close*.
 
