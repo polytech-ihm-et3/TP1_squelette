@@ -25,7 +25,7 @@ Ce programme devra contenir :
 >   4) Dans *URI:*, entrez "https://github.com/polytech-ihm-et3/TP1_squelette.git" (les autres champs devraient se remplir automatiquement);
 >   5) Cliquez sur "*Next >*" pour toutes les étapes suivantes, puis sur "*Finish*".
 >   
-> Pour visualiser les tâches à réaliser dans ce projet avec Eclipse, allez dans "*View*" > "*Tool Windows*" > "*TODO*".
+> Pour visualiser les tâches à réaliser dans ce projet avec Eclipse, allez dans "*Window*" > "*Show View*" > "*Tasks*".
 
 > Pour importer ce projet dans IntelliJ, suivez les étapes suivantes :
 >   1) Allez dans *File* > *New* > *Project from Version Control...*;
@@ -35,10 +35,11 @@ Ce programme devra contenir :
 >   
 > Pour visualiser les tâches à réaliser dans ce projet avec IntelliJ, allez dans "*View*" > "*Tool Windows*" > "*TODO*".
 
-2) Complete the function `initGUI()` in the file **TemperatureConverter.java** by using the class `FlowPane` and layout panes of your choice to make the resulting window look like the pictured above.
-3) Make sure the widgets are aligned and that their location remains consistent while resizing the window as in the following picture:
+2. Dans le fichier *TemperatureConverter.java*, complétez la fonction `initGUI()` pour qu'elle agence correctement les différents éléments graphiques (la disposition finale doit être proche de celle de la photo). Utilisez la classe (FlowPane)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html] pour le contenant principal puis d'autres (Panes)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Pane.html] de votre choix pour les autres éléments.
 
-<p align="center"><img src="/images/tempconvV.jpg" width="150" align="middle"></p>
+3. Assurez-vous que les éléments graphiques sont correctement alignés et que leurs positions sont cohérentent avec la photo suivante lorsque vous changez la taille de la fenêtre.
+
+<br><div align="center"><img src="images/tempconvV.jpg" width="300"></img></div><br>
 
 4) The `textFieldCListener` reads a floating value in the Celsius text box when the user press "enter", converts it from Celsius to Fahrenheit, and writes the result in the Fahrenheit text box. Associate this event handler to the text box of the Celsius value.
 5) Fill in the `textFieldFListener` in order to do the conversion from Fahrenheit to Celsius. Associate it with the text box of the Fahrenheit value.
