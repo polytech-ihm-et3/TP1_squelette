@@ -1,23 +1,39 @@
-# Exercise 1
+Programmation Java @ Et3
+<br>
+Polytech Paris-Saclay | 2019-20
 
-The aim of this exercise is to create a temperature converter containing:
+ 
+___
 
-  - **Two labels** "Celsius" and "Fahrenheit"
-  - **Two text boxes** to enter and display the temperature values
-  - **Two buttons** to reset the text boxes and close the window
+# TP1
 
-<p align="center"><img src="/images/tempconvH.jpg" width="300"></p>
+Le but de ce TP est de créer un programme de conversion de températures.
+Ce programme devra contenir :
 
-1) Import this project in Eclipse
+  - deux titres (cf. (*Label*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html]), "Celsius" et "Fahrenheit";
+  - deux champs de texte (cf. (*TextField*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html]), pour entrer et afficher des températures;
+  - deux boutons (cf. (*Button*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html]), "Close" (pour fermer l'application) et "Reset" (pour vider les champs de texte).
 
-> *To import this project in eclipse, you should open Eclipse and follow these steps:*
->  1) *Go to File \> Import...*
->  2) *Select Git \> Projects from Git*
->  3) *Select Clone URI*
->  4) *Fill the URI box with `https://github.com/IntroductionProgIS/Exercise1.git` (All the other parts should be automatically filled)*
->  5) *Click on "Next", "Next" and "Finish"*
+<br><div align="center"><img src="images/tempconvH.jpg" width="300"></img></div><br>
 
-> *To see the tasks that you need to do in a project: Go to Eclipse and select Window \> Show View \> Tasks*
+1. Importez ce projet dans votre IDE.
+
+> Pour importer ce projet dans Eclipse, suivez les étapes suivantes :
+>   1) Allez dans *File* > *Import...*;
+>   2) Sélectionnez *Git* > *Projects from Git*;
+>   3) Sélectionnez *Clone URI*;
+>   4) Dans *URI:*, entrez "https://github.com/polytech-ihm-et3/TP1_squelette.git" (les autres champs devraient se remplir automatiquement);
+>   5) Cliquez sur "*Next >*" pour toutes les étapes suivantes, puis sur "*Finish*".
+>   
+> Pour visualiser les tâches à réaliser dans ce projet avec Eclipse, allez dans "*View*" > "*Tool Windows*" > "*TODO*".
+
+> Pour importer ce projet dans IntelliJ, suivez les étapes suivantes :
+>   1) Allez dans *File* > *New* > *Project from Version Control...*;
+>   2) Sur la droite, sélectionnez *GitHub*;
+>   3) Dans la barre de recherche, en haut, inscrivez "https://github.com/polytech-ihm-et3/TP1_squelette.git";
+>   4) Cliquez sur "*Clone*".
+>   
+> Pour visualiser les tâches à réaliser dans ce projet avec IntelliJ, allez dans "*View*" > "*Tool Windows*" > "*TODO*".
 
 2) Complete the function `initGUI()` in the file **TemperatureConverter.java** by using the class `FlowPane` and layout panes of your choice to make the resulting window look like the pictured above.
 3) Make sure the widgets are aligned and that their location remains consistent while resizing the window as in the following picture:
