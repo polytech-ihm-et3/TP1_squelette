@@ -10,9 +10,9 @@ ___
 Le but de ce TP est de créer un programme de conversion de températures.
 Ce programme devra contenir :
 
-  - deux titres (cf. (*Label*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html]), "Celsius" et "Fahrenheit";
-  - deux champs de texte (cf. (*TextField*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html]), pour entrer et afficher des températures;
-  - deux boutons (cf. (*Button*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html]), "Close" (pour fermer l'application) et "Reset" (pour vider les champs de texte).
+  - deux titres (cf. [*Label*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html)), "Celsius" et "Fahrenheit";
+  - deux champs de texte (cf. [*TextField*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html)), pour entrer et afficher des températures;
+  - deux boutons (cf. [*Button*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html)), "Close" (pour fermer l'application) et "Reset" (pour vider les champs de texte).
 
 <br><div align="center"><img src="images/tempconvH.jpg" width="300"></img></div><br>
 
@@ -35,7 +35,7 @@ Ce programme devra contenir :
 >   
 > Pour visualiser les tâches à réaliser dans ce projet avec IntelliJ, allez dans "*View*" > "*Tool Windows*" > "*TODO*".
 
-2. Dans le fichier *TemperatureConverter.java*, complétez la fonction `initGUI()` pour qu'elle agence correctement les différents éléments graphiques (la disposition finale doit être proche de celle de la photo). Utilisez la classe (*FlowPane*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html] pour le contenant principal puis d'autres (*Panes*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Pane.html] de votre choix pour les autres éléments.
+2. Dans le fichier *TemperatureConverter.java*, complétez la fonction `initGUI()` pour qu'elle agence correctement les différents éléments graphiques (la disposition finale doit être proche de celle de la photo). Utilisez la classe [*FlowPane*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html) pour le contenant principal puis d'autres [*Panes*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Pane.html) de votre choix pour les autres éléments.
 
 3. Assurez-vous que les éléments graphiques sont correctement alignés et que leurs positions sont cohérentent avec la photo suivante lorsque vous changez la taille de la fenêtre.
 
@@ -50,7 +50,7 @@ Ce programme devra contenir :
 
 Associez `textFieldCListener` au champs de texte correspondant à la valeur en *Celsius*.
 
-> Ici, le listener en question surveille les touches du clavier. Il s'agit donc d'un (*EventHandler*)[https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html] qui surveille les (*KeyEvents*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/KeyEvent.html]. On peut créer ce listener en utilisant :
+> Ici, le listener en question surveille les touches du clavier. Il s'agit donc d'un [*EventHandler*](https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html) qui surveille les [*KeyEvents*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/KeyEvent.html). On peut créer ce listener en utilisant :
 > ```Java
 > textFieldFListener = new EventHandler<KeyEvent>() 
 > {
@@ -60,7 +60,7 @@ Associez `textFieldCListener` au champs de texte correspondant à la valeur en *
 >       //Ce que fait le listener en cas de KeyEvent
 >    }
 > ```
-> Pour associer un Listener à un champs de texte, vous pouvez utiliser la méthode (*setOnKeyPressed*)[https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html#setOnKeyPressed-javafx.event.EventHandler-].
+> Pour associer un Listener à un champs de texte, vous pouvez utiliser la méthode [*setOnKeyPressed*](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html#setOnKeyPressed-javafx.event.EventHandler-).
 
 5. Implémentez `textFieldFListener` pour qu'il réalise les actions suivantes si l'utilisateur appuie sur la touche *ENTRÉE*, alors que le focus est sur textFieldF :
 
