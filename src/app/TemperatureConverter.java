@@ -172,10 +172,14 @@ public class TemperatureConverter extends Application
 			public void handle(KeyEvent e) 
 			{
 				/*
-				 * TODO: 5. Implémentez textFieldFListener pour permettre la
-				 * conversion d'un nombre entré en Fahrenheit en Celsius.
-				 * Associez-le avec le TextField correspondant aux Fahrenheits.
-				 */	
+				 * TODO: 5. Implémentez le textFieldFListener pour qu'il réalise les actions suivantes si
+				 * l'utilisateur appuie sur la touche ENTRÉE, alors que le focus est sur textFieldF :
+				 * 
+				 * - lire la valeur indiquée dans le champs de texte correspondant à la valeur en Fahrenheit;
+				 * - transformer cette valeur en float (attention à la gestion des exceptions !);
+				 * - convertir cette valeur en Celsius;
+				 * - écrire cette nouvelle valeur dans le champs de texte correspondant à la valeur en Celsius.
+				 */
 			}     		
 		};
 
@@ -190,8 +194,7 @@ public class TemperatureConverter extends Application
 			public void handle(ActionEvent event) 
 			{
 				/*
-				 * TODO: 7. Implémentez le buttonResetListener pour qu'il vide textFieldF
-				 * et textFieldC. Associez-le au bouton "Reset".
+				 * TODO: 7. Implémentez le buttonResetListener pour qu'il vide les deux champs de texte.
 				 */	
 			}
 		};
@@ -220,23 +223,34 @@ public class TemperatureConverter extends Application
 		/*
 		 * TODO: 2. Complétez la fonction initGUI() pour qu'elle agence correctement les différents
 		 * éléments graphiques (la disposition finale doit être proche de celle de la photo).
+		 * Utilisez la classe FlowPane pour le contenant principal puis d'autres Panes de votre choix
+		 * pour les autres éléments.
 		 */
 		
 		/*
-		 * TODO: 3. Make sure the widgets are aligned and that their location remains
-		 * consistent while resizing the window.
+		 * TODO: 3. Assurez-vous que les éléments graphiques sont correctement alignés et que leurs
+		 * positions sont cohérentes avec la photo suivante lorsque vous changez la taille de la fenêtre.
 		 */
 		
 		/*
-		 * TODO: 4. The textFieldCListener reads a floating value in the Celsius text box
-		 * when the user press "enter", converts it from Celsius to Fahrenheit, and writes
-		 * the result in the Fahrenheit text box. Associate this event handler to the text
-		 * box of the Celsius value.
+		 * TODO: 4. Associez le textFieldCListener au champs de texte correspondant à la valeur en Celsius.
 		 */
 		
 		/*
-		 * TODO: 6. The buttonCloseListener closes the window. Associate it to the "Close" button.
+		 * TODO: 5. Associez le textFieldFListener au champs de texte correspondant à la valeur en Fahrenheit.
 		 */
+		
+		/*
+		 * TODO: 6. Le buttonCloseListener quitte l'application . Associez-le au bouton Close.
+		 */
+		
+		/*
+		 * TODO: 7. Associez le buttonResetListener au bouton Reset.
+		 */
+		
+		/*
+		 * TODO: 8.(Pour aller plus loin ...) Associez les TextFormatters à textFieldF et textFieldC.
+		 */	
 	}
 
 	//La fonction principale ne doit pas être modifiée !
