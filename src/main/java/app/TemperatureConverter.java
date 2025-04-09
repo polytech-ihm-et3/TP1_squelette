@@ -15,141 +15,131 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class TemperatureConverter extends Application 
-{
-	private Button buttonReset ;
+public class TemperatureConverter extends Application {
+	private Button buttonReset;
 	private Button buttonClose;
-	private Label labelC ;
-	private Label labelF ;
-	private TextField textFieldC ;
-	private TextField textFieldF ;
+	private Label labelC;
+	private Label labelF;
+	private TextField textFieldC;
+	private TextField textFieldF;
 	private EventHandler<KeyEvent> textFieldCListener;
 	private EventHandler<KeyEvent> textFieldFListener;
 	private EventHandler<ActionEvent> buttonResetListener;
 	private EventHandler<ActionEvent> buttonCloseListener;
 	private TextFormatter<Object> textFormatterC;
 	private TextFormatter<Object> textFormatterF;
-	
+
 	@Override
-	public void start(Stage stage) throws Exception
-	{
+	public void start(Stage stage) throws Exception {
 		/*
 		 * APPLICATION : Il s'agit de notre application JavaFX
 		 * STAGE : Il s'agit du contenant de haut niveau de l'application
 		 * SCENE : C'est l'objet qui contient tous les éléments visuels
 		 */
-		
-		//On définit un Pane "root" qui contiendra tous les autres éléments
+
+		// On définit un Pane "root" qui contiendra tous les autres éléments
 		FlowPane root = new FlowPane();
-        
-		//On crée une scene qui contient le Pane "root" comme contenant principal
-		Scene scene = new Scene(root); 
-		
-		//On définit la hauteur du stage (en paramètre)
+
+		// On crée une scene qui contient le Pane "root" comme contenant principal
+		Scene scene = new Scene(root);
+
+		// On définit la hauteur du stage (en paramètre)
 		stage.setHeight(155);
 		stage.setMaxHeight(225);
 		stage.setMinHeight(155);
-		//On définit la largeur du stage (en paramètre)
+		// On définit la largeur du stage (en paramètre)
 		stage.setWidth(351);
 		stage.setMaxWidth(351);
-		stage.setMinWidth(180);        
-		
-		//On initialise les TextFormatters qui gèrent les entrées de nos TextFields
+		stage.setMinWidth(180);
+
+		// On initialise les TextFormatters qui gèrent les entrées de nos TextFields
 		initTextFormatters();
-		
-		//On initialise les Listeners des éléments qui composent notre interface utilisateur
+
+		// On initialise les Listeners des éléments qui composent notre interface
+		// utilisateur
 		initListeners();
-		
-		//On initialise l'interface utilisateur (UI) de l'application
-		//(GUI pour Graphic User Interface)
+
+		// On initialise l'interface utilisateur (UI) de l'application
+		// (GUI pour Graphic User Interface)
 		initGUI(root);
-		
-		//On donne un titre au stage
+
+		// On donne un titre au stage
 		stage.setTitle("Temperature Converter");
-		
-		//On définit la scene ainsi créée comme étant celle du stage
+
+		// On définit la scene ainsi créée comme étant celle du stage
 		stage.setScene(scene);
-		
-		//On affiche le stage
+
+		// On affiche le stage
 		stage.show();
 	}
-	
+
 	/**
 	 * Cette méthode permet l'initialisation des TextFormatters.
 	 * Ces TextFormatters gèrent les entrées de nos TextFields.
 	 */
-	public void initTextFormatters()
-	{
+	public void initTextFormatters() {
 		/*
-		* Le TextFormatter de textFieldC :
-		* Ce TextFormatter accepte un nouveau caractère seulement si le texte entré
-		* reste un nombre valide (positif or negatif). Il accepte également les
-		* nombres scientifiques de la forme xxEx où E représente une puissance de 10.
-		*/
-		textFormatterC = new TextFormatter<>(character -> 
-		{
+		 * Le TextFormatter de textFieldC :
+		 * Ce TextFormatter accepte un nouveau caractère seulement si le texte entré
+		 * reste un nombre valide (positif or negatif). Il accepte également les
+		 * nombres scientifiques de la forme xxEx où E représente une puissance de 10.
+		 */
+		textFormatterC = new TextFormatter<>(character -> {
 			/*
 			 * TODO: 8.(Pour aller plus loin ...) Associez un TextFormatter à textFieldC
 			 * pour qu'il n'accepte que des entrées valides (e.g. 23, 23.345, -21, 3E -02).
-			 */	
-			 
-			 return character;
+			 */
+
+			return character;
 		});
 
 		/*
-		* Le TextFormatter de textFieldF :
-		* Ce TextFormatter accepte un nouveau caractère seulement si le texte entré
-		* reste un nombre valide (positif or negatif). Il accepte également les
-		* nombres scientifiques de la forme xxEx où E représente une puissance de 10.
-		*/
-		textFormatterF = new TextFormatter<>(character -> 
-		{
+		 * Le TextFormatter de textFieldF :
+		 * Ce TextFormatter accepte un nouveau caractère seulement si le texte entré
+		 * reste un nombre valide (positif or negatif). Il accepte également les
+		 * nombres scientifiques de la forme xxEx où E représente une puissance de 10.
+		 */
+		textFormatterF = new TextFormatter<>(character -> {
 			/*
 			 * TODO: 8.(Pour aller plus loin ...) Associez un TextFormatter à textFieldF
 			 * pour qu'il n'accepte que des entrées valides (e.g. 23, 23.345, -21, 3E -02).
-			 */	
-			 
-			 return character;
+			 */
+
+			return character;
 		});
 	}
 
 	/**
 	 * Cette méthode permet l'initialisation des Listeners des éléments de l'UI.
 	 */
-	public void initListeners()
-	{
+	public void initListeners() {
 		/*
-		 * Le Listener de textFieldC : 
+		 * Le Listener de textFieldC :
 		 * Lorsque l'utilisateur appuie sur la touche "ENTRÉE", ce Listener
 		 * convertit la valeur en Celsius entrée dans textFieldC en Fahrenheit
 		 * (à condition que le focus soit sur testFieldC)
 		 */
-		textFieldCListener = new EventHandler<KeyEvent>() 
-		{
+		textFieldCListener = new EventHandler<KeyEvent>() {
 			@Override
-			public void handle(KeyEvent e)
-			{
-				//Si l'utilisateur a appuyé sur la touche "ENTRÉE"
-				if (e.getCode().equals(KeyCode.ENTER)) 
-				{
-					//On récupère le texte entré dans textFieldC
+			public void handle(KeyEvent e) {
+				// Si l'utilisateur a appuyé sur la touche "ENTRÉE"
+				if (e.getCode().equals(KeyCode.ENTER)) {
+					// On récupère le texte entré dans textFieldC
 					String value = textFieldC.getText();
-					
-					try 
-					{
-						//On transforme ce texte en float
+
+					try {
+						// On transforme ce texte en float
 						float valC = new Float(value);
-						//On calcule l'équivalence de cette valeur en Fahrenheit
+						// On calcule l'équivalence de cette valeur en Fahrenheit
 						float valF = valC * 1.8f + 32;
-						//On affiche la valeur en Fahrenheit dans textFieldF
+						// On affiche la valeur en Fahrenheit dans textFieldF
 						textFieldF.setText(Float.toString(valF));
 					}
-					//Si le code précédent retourne une erreur
-					catch (Exception exception) 
-					{
-						//On vide textFieldF
+					// Si le code précédent retourne une erreur
+					catch (Exception exception) {
+						// On vide textFieldF
 						textFieldF.setText("");
-						//On vide textFieldC
+						// On vide textFieldC
 						textFieldC.setText("");
 					}
 				}
@@ -157,26 +147,29 @@ public class TemperatureConverter extends Application
 		};
 
 		/*
-		 * Le Listener de textFieldF : 
+		 * Le Listener de textFieldF :
 		 * Lorsque l'utilisateur appuie sur la touche "ENTRÉE", ce Listener
 		 * convertit la valeur en Fahrenheit entrée dans textFieldF en Celsius
 		 * (à condition que le focus soit sur testFieldF)
 		 */
-		textFieldFListener = new EventHandler<KeyEvent>() 
-		{
+		textFieldFListener = new EventHandler<KeyEvent>() {
 			@Override
-			public void handle(KeyEvent e) 
-			{
+			public void handle(KeyEvent e) {
 				/*
-				 * TODO: 5. Implémentez le textFieldFListener pour qu'il réalise les actions suivantes si
-				 * l'utilisateur appuie sur la touche ENTRÉE, alors que le focus est sur textFieldF :
+				 * TODO: 5. Implémentez le textFieldFListener pour qu'il réalise les actions
+				 * suivantes si
+				 * l'utilisateur appuie sur la touche ENTRÉE, alors que le focus est sur
+				 * textFieldF :
 				 * 
-				 * - lire la valeur indiquée dans le champs de texte correspondant à la valeur en Fahrenheit;
-				 * - transformer cette valeur en float (attention à la gestion des exceptions !);
+				 * - lire la valeur indiquée dans le champs de texte correspondant à la valeur
+				 * en Fahrenheit;
+				 * - transformer cette valeur en float (attention à la gestion des exceptions
+				 * !);
 				 * - convertir cette valeur en Celsius;
-				 * - écrire cette nouvelle valeur dans le champs de texte correspondant à la valeur en Celsius.
+				 * - écrire cette nouvelle valeur dans le champs de texte correspondant à la
+				 * valeur en Celsius.
 				 */
-			}     		
+			}
 		};
 
 		/*
@@ -184,27 +177,25 @@ public class TemperatureConverter extends Application
 		 * Si l'utilisateur clique sur le bouton "Reset", ce Listener vide les
 		 * differents TextFields.
 		 */
-		buttonResetListener = new EventHandler<ActionEvent>()
-		{
+		buttonResetListener = new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent event) 
-			{
+			public void handle(ActionEvent event) {
 				/*
-				 * TODO: 7. Implémentez le buttonResetListener pour qu'il vide les deux champs de texte.
-				 */	
+				 * TODO: 7. Implémentez le buttonResetListener pour qu'il vide les deux champs
+				 * de texte.
+				 */
 			}
 		};
 
 		/*
 		 * Le Listener du bouton "Close" :
-		 * Si l'utilisateur clique sur le bouton "Close", ce Listener ferme l'application.
+		 * Si l'utilisateur clique sur le bouton "Close", ce Listener ferme
+		 * l'application.
 		 */
-		buttonCloseListener = new EventHandler<ActionEvent>() 
-		{
+		buttonCloseListener = new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent event) 
-			{
-				//On quitte l'application
+			public void handle(ActionEvent event) {
+				// On quitte l'application
 				Platform.exit();
 			}
 		};
@@ -212,47 +203,55 @@ public class TemperatureConverter extends Application
 
 	/**
 	 * Cette méthode permet l'initialisation des éléments graphiques.
+	 * 
 	 * @param root Le Pane principal de la scene
 	 */
-	public void initGUI(Pane root)
-	{
+	public void initGUI(Pane root) {
 		/*
-		 * TODO: 2. Complétez la fonction initGUI() pour qu'elle agence correctement les différents
-		 * éléments graphiques (la disposition finale doit être proche de celle de la photo).
-		 * Utilisez la classe FlowPane pour le contenant principal puis d'autres Panes de votre choix
+		 * TODO: 2. Complétez la fonction initGUI() pour qu'elle agence correctement les
+		 * différents
+		 * éléments graphiques (la disposition finale doit être proche de celle de la
+		 * photo).
+		 * Utilisez la classe FlowPane pour le contenant principal puis d'autres Panes
+		 * de votre choix
 		 * pour les autres éléments.
 		 */
-		
+
 		/*
-		 * TODO: 3. Assurez-vous que les éléments graphiques sont correctement alignés et que leurs
-		 * positions sont cohérentes avec la photo suivante lorsque vous changez la taille de la fenêtre.
+		 * TODO: 3. Assurez-vous que les éléments graphiques sont correctement alignés
+		 * et que leurs
+		 * positions sont cohérentes avec la photo suivante lorsque vous changez la
+		 * taille de la fenêtre.
 		 */
-		
+
 		/*
-		 * TODO: 4. Associez le textFieldCListener au champs de texte correspondant à la valeur en Celsius.
+		 * TODO: 4. Associez le textFieldCListener au champs de texte correspondant à la
+		 * valeur en Celsius.
 		 */
-		
+
 		/*
-		 * TODO: 5. Associez le textFieldFListener au champs de texte correspondant à la valeur en Fahrenheit.
+		 * TODO: 5. Associez le textFieldFListener au champs de texte correspondant à la
+		 * valeur en Fahrenheit.
 		 */
-		
+
 		/*
-		 * TODO: 6. Le buttonCloseListener quitte l'application . Associez-le au bouton Close.
+		 * TODO: 6. Le buttonCloseListener quitte l'application . Associez-le au bouton
+		 * Close.
 		 */
-		
+
 		/*
 		 * TODO: 7. Associez le buttonResetListener au bouton Reset.
 		 */
-		
+
 		/*
-		 * TODO: 8.(Pour aller plus loin ...) Associez les TextFormatters à textFieldF et textFieldC.
-		 */	
+		 * TODO: 8.(Pour aller plus loin ...) Associez les TextFormatters à textFieldF
+		 * et textFieldC.
+		 */
 	}
 
-	//La fonction principale ne doit pas être modifiée !
-	public static void main(String[] args) 
-	{
-		//On lance l'application
+	// La fonction principale ne doit pas être modifiée !
+	public static void main(String[] args) {
+		// On lance l'application
 		launch(args);
 	}
 }
