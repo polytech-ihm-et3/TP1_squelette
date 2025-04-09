@@ -17,7 +17,7 @@ Ce programme devra contenir :
 
 1. Importez ce projet dans votre IDE.
 
-> Suivez les indications sur ce lien : https://codimd.math.cnrs.fr/MHC4V4TsRAmby-wZVfOPhQ#
+> Suivez les indications sur ce lien : https://github.com/polytech-ihm-et3/HowToUseJavaFxWithIDE
 
 2. Dans le fichier _TemperatureConverter.java_, complétez la fonction `initGUI()` pour qu'elle agence correctement les différents éléments graphiques (la disposition finale doit être proche de celle de la photo). Utilisez la classe [_FlowPane_](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html) pour le contenant principal puis d'autres [_Panes_](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Pane.html) de votre choix pour les autres éléments.
 
